@@ -1,0 +1,37 @@
+.title {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  
+  margin: 50px 0 30px;
+  
+  > h2 {
+    flex-grow: 1;
+  }
+
+  > a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-primary-accent);
+
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+
+      width: 0%;
+      height: 1px;
+
+      background-color: var(--color-primary);
+      transition: var(--easeout-normal);
+
+      bottom: -4px;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

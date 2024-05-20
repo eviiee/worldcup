@@ -1,0 +1,130 @@
+
+
+.header_container {
+    width: 100%;
+    height: var(--header-height);
+    padding: 22px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-gray3);
+
+    position: sticky;
+    top: 0;
+
+    z-index: var(--z-ui);
+}
+
+.header_mobile {
+    display: none;
+}
+
+.header_desktop {
+
+    width: 100%;
+    padding: 0 20px;
+    max-width: 1280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    >.header_desktop_left {
+
+        >a {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-primary-accent);
+
+            > div {
+                display: flex;
+                flex-direction: column;
+
+                gap: 4px;
+
+                > span:first-child {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        >.header_contents_wrapper {
+
+            display: flex;
+            gap: 8px;
+
+        }
+
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    >.header_desktop_right {
+
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        > .search_button {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--color-gray6);
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 12px 18px;
+            padding-right: 40px;
+            border-radius: 999px;
+            background-color: var(--color-gray2);
+
+            > img {
+                width: 20px;
+                height: 20px;
+                color: var(--color-primary-accent);
+
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+a.header_link {
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 10px 15px;
+    border-radius: 8px;
+
+    background-color: var(--color-white);
+
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+
+    &:hover {
+        color: var(--color-primary-accent);
+        background-color: var(--color-gray1);
+    }
+
+    &.create_worldcup {
+        background-color: var(--color-primary-accent);
+        color: var(--color-white);
+
+        &:hover {
+            background-color: var(--color-primary-accent-hover);
+            color: var(--color-white);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .header_mobile {}
+
+    .header_desktop {
+        display: none;
+    }
+}

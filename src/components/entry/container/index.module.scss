@@ -1,0 +1,20 @@
+.entries_wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    row-gap: 50px;
+    column-gap: 60px;
+
+    padding: 10px 0 50px;
+}
+
+
+
+@media (max-width: 767px) {
+    .entries_wrap {
+        display: flex;
+        flex-direction: column;
+
+        gap: 40px;
+    }
+}

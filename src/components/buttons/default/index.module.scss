@@ -1,0 +1,52 @@
+.common_button {
+    padding: 8px 14px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    &.strong {
+        color: var(--color-white);
+        background-color: var(--strong-color);
+    }
+
+    border-radius: 6px;
+
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+
+    &.primary {
+        --fg-color : var(--color-primary-fg);
+        --bg-color : var(--color-primary-bg);
+        --strong-color : var(--color-primary-accent);
+    }
+
+    &.red {
+        --fg-color : var(--color-red-fg);
+        --bg-color : var(--color-red-bg);
+        --strong-color : var(--color-red-accent);
+    }
+
+    &.black {
+        --fg-color : var(--color-dark-fg);
+        --bg-color : var(--color-dark-bg);
+        --strong-color : var(--color-dark-accent);
+    }
+
+    &.blue {
+        --fg-color : var(--color-blue-fg);
+        --bg-color : var(--color-blue-bg);
+        --strong-color : var(--color-blue-accent);
+    }
+
+    &.yellow {
+        --fg-color : var(--color-yellow-fg);
+        --bg-color : var(--color-yellow-bg);
+        --strong-color : var(--color-yellow-accent);
+    }
+
+    &:hover {
+        background-color: var(--color-primary-fg);
+        color: var(--color-white);
+    }
+}

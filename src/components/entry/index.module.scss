@@ -1,0 +1,182 @@
+.entry_container {
+
+    position: relative;
+
+    grid-column: span 1;
+
+    display: flex;
+    flex-direction: column;
+
+    > .thumbnail {
+
+        position: relative;
+
+        margin-bottom: 24px;
+        padding: 0;
+
+        border-radius: 14px;
+        overflow: hidden;
+
+        font-size: 0;
+
+        background-color: var(--color-gray2);
+
+        >img {
+            width: 100%;
+            aspect-ratio: 1.65;
+
+            object-fit: cover;
+        }
+
+        &.nsfw {
+
+            > img {
+                filter: blur(20px);
+            }
+
+            &::before {
+                content: '후방 주의';
+                line-height: 1;
+    
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+    
+                background-color: rgba($color: red, $alpha: 0.42);
+    
+                font-size: 20px;
+                font-weight: 500;
+                color: var(--color-white);
+    
+                z-index: var(--z-overlay);
+    
+                transition: 0.2s;
+    
+                pointer-events: none;
+            }
+        }
+
+        &::after {
+            content: '지금 해보기';
+            line-height: 1;
+
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            background-color: rgba($color: var(--color-black-rgb), $alpha: 0.8);
+
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--color-white);
+
+            z-index: var(--z-overlay);
+
+            opacity: 0;
+
+            transition: 0.2s;
+
+            pointer-events: none;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
+        > .candidates {
+            font-size: 12px;
+            line-height: 1;
+            color: var(--color-white);
+            padding: 7px 12px;
+            border-radius: 999px;
+
+            background-color: rgba($color: black, $alpha: 0.7);
+
+            position: absolute;
+
+            top: 13px;
+            left: 13px;
+            z-index: var(--z-overlay);
+        }
+    }
+}
+
+.entry_title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    color: var(--color-black);
+
+    margin-bottom: 8px;
+
+    transition: var(--easeout-normal);
+
+    &:hover {
+        color: var(--color-primary-accent);
+    }
+}
+
+.entry_subTitle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: var(--color-gray7);
+}
+
+.entry_info {
+    display: flex;
+    align-items: center;
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-gray8);
+
+    margin-bottom: 8px;
+
+    >span {
+        &:not(:last-child) {
+            border-right: 2px solid var(--color-gray3);
+            padding-right: 8px;
+        }
+
+        &:last-child {
+            padding-left: 8px;
+        }
+    }
+}
+
+.entry_tags {
+    display: flex;
+    gap: 5px;
+
+    margin-top: 24px;
+
+    >a {
+        font-size: 12px;
+        color: var(--color-gray7);
+        font-weight: 500;
+
+        border-radius: 4px;
+        background-color: var(--color-gray2);
+        padding: 4px 7px;
+
+        &:hover {
+            background-color: var(--color-gray3);
+        }
+    }
+}
