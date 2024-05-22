@@ -4,6 +4,11 @@
   align-items: center;
   
   margin: 50px 0 30px;
+
+  > svg {
+    width: 24px;
+    height: 24px;
+  }
   
   > h2 {
     flex-grow: 1;

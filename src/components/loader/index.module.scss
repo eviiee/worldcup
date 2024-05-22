@@ -1,7 +1,7 @@
 .loader_container {
 
     width: 100%;
-    height: calc(100vh - var(--header-height));
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -89,9 +89,9 @@
 @keyframes glow {
     0%,
     100% {
-        color: var(--color-gray3);
+        color: var(--color-gray6);
     }
     50% {
-        color: var(--color-gray4);
+        color: var(--color-gray8);
     }
 }

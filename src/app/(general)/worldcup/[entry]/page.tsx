@@ -7,15 +7,15 @@ import commaSeparate from "@/utils/numberSeparator"
 import Link from "next/link"
 
 import Image from 'next/image'
-import shareIcon from '../../../../public/icon/share.svg'
 import getOtherEntries from "@/services/getOtherEntries"
 import Candidate from "@/model/candidate"
 import Comment from "@/model/comment"
-import emptyProfile from '../../../../public/images/empty_profile.jpg'
+import emptyProfile from '@/../public/images/empty_profile.jpg'
 
-import goldMedal from '../../../../public/icon/gold_medal.svg'
-import silverMedal from '../../../../public/icon/silver_medal.svg'
-import bronzeMedal from '../../../../public/icon/bronze_medal.svg'
+import ShareIcon from '@/../public/icon/share.svg'
+import GoldMedal from '@/../public/icon/gold_medal.svg'
+import SilverMedal from '@/../public/icon/silver_medal.svg'
+import BronzeMedal from '@/../public/icon/bronze_medal.svg'
 import { Metadata } from "next"
 
 export async function generateMetadata({
@@ -79,9 +79,9 @@ const EntryInfoSection = ({ entryInfo }: { entryInfo: EntryInfo }) => {
                 <h3>{entryInfo.subTitle}</h3>
                 <p>{entryInfo.description}</p>
                 <div className={styles.buttons}>
-                    <Link className={styles.play} href='play/'>▶&nbsp;&nbsp;지금 플레이</Link>
+                    <Link className={styles.play} href={`/worldcup/${entryInfo.index}/play`}>▶&nbsp;&nbsp;지금 플레이</Link>
                     <Link className={styles.share} href='./play'>
-                        <Image src={shareIcon} alt='검색' />
+                        <ShareIcon />
                         공유
                     </Link>
                 </div>
@@ -100,10 +100,10 @@ const Ranking = ({ candidates }: { candidates: Candidate[] }) => {
     let tieCount: number = 1
     let currentLeastWin: number = sortedCandidates[0].wins + 1
 
-    const medalImage: string[] = [
-        goldMedal,
-        silverMedal,
-        bronzeMedal,
+    const medalImage: React.ReactNode[] = [
+        <GoldMedal />,
+        <SilverMedal />,
+        <BronzeMedal />,
     ]
 
     const candidatesComponents = sortedCandidates.map((candidate) => {
@@ -124,7 +124,7 @@ const Ranking = ({ candidates }: { candidates: Candidate[] }) => {
         return (
             <div className={className} key={candidate.key}>
                 {currentRanking <= 3 ?
-                    <Image className={styles.medal} src={medalImage[currentRanking - 1]} alt={`${currentRanking}등`} /> :
+                    medalImage[currentRanking - 1] :
                     <span className={styles.rank}>{currentRanking}</span>}
                 <img className={styles.thumbnail} src={candidate.image} alt={candidate.name} />
                 <span className={styles.name}>{candidate.name}</span>

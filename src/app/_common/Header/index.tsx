@@ -3,7 +3,7 @@ import Button from '@/components/buttons/default'
 import styles from './index.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
-import searchIcon from '../../../../public/icon/search.svg'
+import SearchIcon from '../../../../public/icon/search.svg'
 
 export default function Header() {
     return (
@@ -24,7 +24,7 @@ export default function Header() {
                 </div>
                 <div className={styles.header_desktop_right}>
                     <button className={styles.search_button}>
-                        <Image src={searchIcon} alt='검색' />
+                        <SearchIcon view />
                         관심있는 주제를 검색해보세요.
                     </button>
                     <Link className={styles.header_link} href='/'>로그인</Link>

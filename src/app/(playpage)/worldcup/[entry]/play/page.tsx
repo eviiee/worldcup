@@ -59,7 +59,7 @@ export default function WorldcupPlayPage({
         setStartedPlaying(true)
     }
     const stageSelection = isLoading ? <></> : <StageSelectionScreen totalCandidates={entryInfo!.candidates.length} onStartPlaying={startPlaying} />
-    const playScreen = startedPlaying ? <PlayScreen candidatesList={shuffleArray(entryInfo!.candidates).slice(0, maxRounds)} onPlayEnd={(winner: Candidate) => console.log(`your winner is ${winner.name!}`)} /> : <></>
+    const playScreen = startedPlaying ? <PlayScreen title={entryInfo!.title} index={entryIndex} candidatesList={shuffleArray(entryInfo!.candidates).slice(0, maxRounds)} onPlayEnd={(winner: Candidate) => console.log(`your winner is ${winner.name!}`)} /> : <></>
 
     return (
         isLoading ? loader :

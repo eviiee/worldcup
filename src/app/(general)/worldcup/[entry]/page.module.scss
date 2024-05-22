@@ -135,14 +135,12 @@
                         color: var(--color-black);
                         background-color: var(--color-gray3);
 
-                        > img {
+                        > svg {
                             height: 20px;
                             width: 20px;
-                            aspect-ratio: 1;
-                            object-fit: fill;
-
-                            opacity: 0.8;
                             margin-right: 10px;
+
+                            fill: var(--color-black);
                         }
 
                         &:hover {
@@ -170,10 +168,9 @@
 
                 }
 
-                > img.medal {
+                > svg {
                     width: 60px;
                     height: 60px;
-                    object-fit: contain;
                 }
 
                 > span {

@@ -1,10 +1,49 @@
 .stageSelectionScreen {
+
+    width: 100%;
+    max-width: 1300px;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 
-    height: max(calc(100vh - var(--header-height)), 500px);
+    height: max(100vh, 500px);
+
+    color: var(--color-light);
+
+    >button {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        padding: 8px;
+        margin-left: -8px;
+
+        margin-bottom: 80px;
+
+        opacity: 0.3;
+        transition: opacity var(--easeout-fast);
+
+        >svg {
+            fill: var(--color-white);
+            width: 17px;
+            height: 17px;
+        }
+
+        >span {
+            color: var(--color-white);
+            font-size: 20px;
+
+            word-break: keep-all;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 
     >h2 {
         font-size: 32px;
@@ -36,8 +75,8 @@
             font-size: 23px;
 
             font-weight: 600;
-            color: var(--color-primary-accent);
-            background-color: var(--color-gray2);
+            color: var(--color-primary);
+            background-color: var(--color-dark);
 
             padding: 4px 12px;
             border-radius: 13px;
@@ -118,12 +157,18 @@
             font-size: 18px;
             font-weight: 500;
 
-            color: var(--color-gray8);
-            background-color: var(--color-gray2);
+            color: var(--color-gray6);
+            background-color: var(--color-dark-accent);
+            border: 1px solid transparent;
+
+            transition: var(--easeout-fast);
 
             &.selected {
                 color: var(--color-white);
-                background-color: var(--color-black);
+                background-color: var(--color-dark);
+                border: 1px solid var(--color-primary);
+
+                box-shadow: 0 0 10px rgba($color: var(--color-primary-rgb), $alpha: 0.3);
             }
         }
 
@@ -154,10 +199,10 @@
             }
         }
 
-        > span {
+        >span {
             font-size: 14px;
             font-weight: 400;
-            color: var(--color-gray4);
+            color: var(--color-gray7);
         }
     }
 }

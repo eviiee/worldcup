@@ -1,0 +1,106 @@
+.play_screen {
+
+    height: max(100vh, 640px);
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+
+    >.header {
+
+        display: flex;
+
+        border-bottom: 1px solid var(--color-gray6);
+
+        padding: 20px 20px 18px;
+        gap: 20px;
+
+        > a > h1 {
+            color: var(--color-white);
+            font-weight: 500;
+            font-size: 22px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            width: 300px;
+        }
+
+        >.progress {
+
+            flex-shrink: 1;
+            flex-grow: 1;
+            width: 100%;
+
+            >.progress_bar {
+                position: relative;
+                height: 6px;
+                background-color: var(--color-dark);
+
+                border-radius: 99px;
+
+                margin-bottom: 8px;
+
+                >div {
+                    position: absolute;
+                    left: 0;
+                    height: 6px;
+                    top: 0;
+
+                    background-color: var(--color-white);
+
+                    border-radius: 99px;
+                }
+            }
+
+            >.text {
+                color: var(--color-white);
+                font-size: 15px;
+                font-weight: 400;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    >.candidates {
+
+        flex-grow: 1;
+
+        width: 100vw;
+        display: flex;
+        justify-content: stretch;
+
+        >.candidate {
+
+            width: 50vw;
+
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            >img {
+                width: 100%;
+                height: calc(100vh - 71px);
+                flex-grow: 1;
+                object-fit: contain;
+            }
+
+            >span {
+
+                font-size: 50px;
+                font-weight: 500;
+                color: var(--color-white);
+
+                -webkit-text-stroke: 1.3px black;
+
+                position: absolute;
+
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

@@ -2,6 +2,10 @@
 import { useEffect, useState } from "react";
 import styles from './stage-selection.module.scss';
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+
+import Image from "next/image";
+import BackIcon from "@/../public/icon/back.svg"
 
 export const StageSelectionScreen = ({
     totalCandidates, onStartPlaying,
@@ -12,6 +16,8 @@ export const StageSelectionScreen = ({
 
     const [selectedRound, selectRound] = useState<number>(totalCandidates >= 32 ? 32 : totalCandidates);
     const [options, setOptions] = useState<number[]>([]);
+
+    const router = useRouter()
 
     useEffect(() => {
 
@@ -78,8 +84,11 @@ export const StageSelectionScreen = ({
 
     const startPlaying = () => onStartPlaying(selectedRound)
 
+    const navBack = () => router.back()
+
     return (
         <div className={styles.stageSelectionScreen}>
+            <button onClick={navBack}><BackIcon /><span>뒤로가기</span></button>
             <h2>몇강부터 시작할까요?</h2>
             <h3>총
                 <span className={styles.highlight}>{totalCandidates}</span>명의 후보 {selection_notifier_animated}

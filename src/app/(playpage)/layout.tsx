@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "@/styles/global.scss";
-import Header from "./_common/Header";
 
 export const metadata: Metadata = {
   title: "이상형 월드컵 - #999FFF",
@@ -18,8 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body id="body">
-        <Header />
+      <body id="body_play">
         <main>{children}</main>
         <div id="modal_backdrop"></div>
       </body>
