@@ -101,9 +101,9 @@ const Ranking = ({ candidates }: { candidates: Candidate[] }) => {
     let currentLeastWin: number = sortedCandidates[0].wins + 1
 
     const medalImage: React.ReactNode[] = [
-        <GoldMedal />,
-        <SilverMedal />,
-        <BronzeMedal />,
+        <GoldMedal key='gold' />,
+        <SilverMedal key='silver' />,
+        <BronzeMedal key='bronze' />,
     ]
 
     const candidatesComponents = sortedCandidates.map((candidate) => {
